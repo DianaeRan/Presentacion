@@ -97,7 +97,7 @@
             this.btnlogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.btnlogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnlogin.ForeColor = System.Drawing.Color.Black;
-            this.btnlogin.Location = new System.Drawing.Point(277, 238);
+            this.btnlogin.Location = new System.Drawing.Point(277, 209);
             this.btnlogin.Name = "btnlogin";
             this.btnlogin.Size = new System.Drawing.Size(417, 50);
             this.btnlogin.TabIndex = 3;
