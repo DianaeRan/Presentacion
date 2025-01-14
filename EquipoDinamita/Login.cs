@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Web;
 
 namespace EquipoDinamita
 {
@@ -16,8 +17,9 @@ namespace EquipoDinamita
         public Login()
         {
             InitializeComponent();
+   
         }
-
+        ConexionDB db = new ConexionDB();
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.dll", EntryPoint = "SendMessage")]
@@ -30,39 +32,39 @@ namespace EquipoDinamita
 
         private void txtuser_Enter(object sender, EventArgs e)
         {
-            if (txtuser.Text == "USUARIO")
+            if (txtusuario.Text == "USUARIO")
             {
-                txtuser.Text = "";
-                txtuser.ForeColor = Color.Gray;
+                txtusuario.Text = "";
+                txtusuario.ForeColor = Color.Gray;
             }
         }
 
         private void txtuser_Leave(object sender, EventArgs e)
         {
-            if(txtuser.Text == "")
+            if(txtusuario.Text == "")
             {
-                txtuser.Text = "USUARIO";
-                txtuser.ForeColor = Color.DimGray;
+                txtusuario.Text = "USUARIO";
+                txtusuario.ForeColor = Color.DimGray;
             }
         }
 
         private void txtpass_Enter(object sender, EventArgs e)
         {
-            if (txtpass.Text == "CONTRASEÑA")
+            if (txtcontraseña.Text == "CONTRASEÑA")
             {
-                txtpass.Text = "";
-                txtpass.ForeColor = Color.Gray;
-                txtpass.UseSystemPasswordChar = true;
+                txtcontraseña.Text = "";
+                txtcontraseña.ForeColor = Color.Gray;
+                txtcontraseña.UseSystemPasswordChar = true;
             }
         }
 
         private void txtpass_Leave(object sender, EventArgs e)
         {
-            if (txtpass.Text == "")
+            if (txtcontraseña.Text == "")
             {
-                txtpass.Text = "CONTRASEÑA";
-                txtpass.ForeColor = Color.DimGray;
-                txtpass.UseSystemPasswordChar = false;
+                txtcontraseña.Text = "CONTRASEÑA";
+                txtcontraseña.ForeColor = Color.DimGray;
+                txtcontraseña.UseSystemPasswordChar = false;
             }
         }
 
@@ -91,6 +93,21 @@ namespace EquipoDinamita
         private void Login_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtusuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnacceder_Click(object sender, EventArgs e)
+        {
+            string nombre = txtusuario.Text;
+            string contraseña = txtcontraseña.Text;
+            if (db.ValidacionLogin(nombre, contraseña)) 
+            {
+                MessageBox.Show("Usuario encontrado");
+            }
         }
     }
 }

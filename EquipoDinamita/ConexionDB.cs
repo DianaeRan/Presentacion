@@ -16,7 +16,7 @@ namespace EquipoDinamita
         
         public static MySqlConnection crearconexion()
         {
-            string cadenaConexion = "server=localhost;port=3306;database=Estero;user id=root;password=Di4n4ran;";
+            string cadenaConexion = "server=localhost;port=3306;database=estero;user id=root;password=rouss04;";
             return new MySqlConnection(cadenaConexion);
         }
         // ***************************VALIDACIONES NOMBRE**************************************
@@ -535,8 +535,23 @@ namespace EquipoDinamita
 
             }
         }
-        
-        
+
+        // **************************VALIDACIONES LOGIN*************************************
+        public bool ValidacionLogin(string nombre, string contraseña)
+        {
+            string query = "SELECT COUNT(*) FROM usuarios WHERE Nombre  = @nombre AND Contraseña  =  @contraseña;";
+            using (MySqlConnection conexion = crearconexion())
+            {
+                conexion.Open();
+                MySqlCommand cmd = new MySqlCommand(query, conexion);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@nombre", nombre);
+                cmd.Parameters.AddWithValue("@contraseña", contraseña);
+                int encontrados = Convert.ToInt32(cmd.ExecuteScalar());
+                return encontrados > 0;
+            }
+        }
+
 
     }
 }
