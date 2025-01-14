@@ -186,7 +186,6 @@
             this.toolStripMenuItem12});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(1371, 46);
             this.menuStrip1.TabIndex = 21;
             this.menuStrip1.Text = "menuStrip1";
@@ -274,7 +273,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Green;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(783, 14);
+            this.label7.Location = new System.Drawing.Point(297, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(393, 32);
             this.label7.TabIndex = 31;
