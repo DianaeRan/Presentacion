@@ -102,7 +102,7 @@
             this.btnacceder.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.btnacceder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnacceder.ForeColor = System.Drawing.Color.Black;
-            this.btnacceder.Location = new System.Drawing.Point(185, 154);
+            this.btnacceder.Location = new System.Drawing.Point(185, 156);
             this.btnacceder.Margin = new System.Windows.Forms.Padding(2);
             this.btnacceder.Name = "btnacceder";
             this.btnacceder.Size = new System.Drawing.Size(278, 32);
